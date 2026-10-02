@@ -525,6 +525,555 @@ nav ul a[aria-current="page"] {
     border-bottom: 2px solid var(--color-primary);
     padding-bottom: 4px;
 }
+
+
+/* =========================
+   Recipe Detail — by Yunxue Wu
+   ========================= */
+
+/* ===== Recipe Hero ===== */
+.recipe-hero {
+    padding: 60px 40px;
+    background-color: var(--color-primary-light);
+}
+
+.recipe-hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.recipe-hero-img {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 24px rgba(63, 52, 50, 0.12);
+}
+
+.recipe-eyebrow {
+    color: var(--color-primary);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.recipe-hero-text h1 {
+    font-size: 2.5rem;
+    color: var(--color-text);
+    margin-bottom: 12px;
+}
+
+.recipe-meta {
+    color: var(--color-accent);
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.recipe-intro {
+    color: var(--color-text-light);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* ===== Story Pack ===== */
+.story-pack {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px 40px;
+}
+
+.story-step {
+    position: relative;
+    padding-left: 80px;
+    margin-bottom: 60px;
+}
+
+.step-number {
+    position: absolute;
+    left: 0;
+    top: -8px;
+
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primary-light);
+    line-height: 1;
+}
+
+.story-step h2 {
+    font-size: 1.5rem;
+    color: var(--color-text);
+    margin-bottom: 16px;
+}
+
+.story-step p {
+    color: var(--color-text-light);
+    line-height: 1.8;
+}
+
+/* Step indicator animation */
+@keyframes pulseNumber {
+    0%, 100% {
+        color: var(--color-primary-light);
+        transform: scale(1);
+    }
+    50% {
+        color: var(--color-primary);
+        transform: scale(1.08);
+    }
+}
+
+.story-step:hover .step-number {
+    animation: pulseNumber 1.6s ease-in-out infinite;
+}
+
+/* ===== Ingredients (Flexbox) ===== */
+.ingredients-list {
+    list-style: none;
+    padding: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.ingredients-list li {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-primary-light);
+    border-radius: var(--border-radius);
+    padding: 8px 16px;
+    color: var(--color-text);
+    font-size: 0.9rem;
+    transition: border-color var(--transition), transform var(--transition);
+}
+
+.ingredients-list li:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+/* ===== Step Lists (Prep / Cooking) ===== */
+.step-list {
+    padding-left: 20px;
+    color: var(--color-text-light);
+    line-height: 1.9;
+}
+
+.step-list li {
+    margin-bottom: 8px;
+}
+
+/* ===== Kitchen Assistant (Bonus 1) ===== */
+.kitchen-assistant {
+    max-width: 800px;
+    margin: 0 auto 80px;
+    padding: 50px 40px;
+    background-color: var(--color-surface);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 16px rgba(63, 52, 50, 0.06);
+}
+
+.kitchen-assistant h2 {
+    font-size: 1.6rem;
+    color: var(--color-text);
+    margin-bottom: 8px;
+}
+
+.assistant-intro {
+    color: var(--color-text-light);
+    margin-bottom: 24px;
+}
+
+.assistant-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.assistant-card {
+    background-color: var(--color-background);
+    border-left: 4px solid var(--color-primary);
+    border-radius: var(--border-radius);
+    padding: 16px 20px;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.assistant-card:hover {
+    transform: translateX(6px);
+    box-shadow: 0 6px 18px rgba(63, 52, 50, 0.08);
+}
+
+.assistant-card summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--color-text);
+    list-style: none;
+}
+
+.assistant-card summary::-webkit-details-marker {
+    display: none;
+}
+
+.assistant-card summary::before {
+    content: "💬 ";
+    margin-right: 6px;
+}
+
+.assistant-card summary:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+.assistant-card p {
+    margin-top: 12px;
+    color: var(--color-text-light);
+    line-height: 1.7;
+}
+
+/* ===== Recommendation (Bonus 2) ===== */
+.recommendation {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px 100px;
+}
+
+.recommendation h2 {
+    font-size: 1.8rem;
+    color: var(--color-text);
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.recommendation-intro {
+    text-align: center;
+    color: var(--color-text-light);
+    margin-bottom: 40px;
+}
+
+.recommendation-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.recommendation-card {
+    background-color: var(--color-surface);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 10px rgba(63, 52, 50, 0.06);
+    overflow: hidden;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.recommendation-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 26px rgba(63, 52, 50, 0.12);
+}
+
+.recommendation-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.recommendation-card h3 {
+    font-size: 1.15rem;
+    color: var(--color-text);
+    padding: 16px 20px 4px;
+}
+
+.rec-meta {
+    color: var(--color-primary);
+    font-size: 0.85rem;
+    padding: 0 20px;
+    margin-bottom: 12px;
+}
+
+.recommendation-card a {
+    display: inline-block;
+    padding: 0 20px 20px;
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition);
+}
+
+.recommendation-card a:hover,
+.recommendation-card a:focus {
+    color: var(--color-primary);
+}
+
+/* =========================
+   About Page — by Yunxue Wu
+   ========================= */
+
+/* ===== About Section ===== */
+.about-section {
+    padding: 80px 40px;
+    background-color: var(--color-primary-light);
+}
+
+.about-inner {
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-eyebrow {
+    color: var(--color-primary);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.about-section h1 {
+    font-size: 2.4rem;
+    color: var(--color-text);
+    margin-bottom: 24px;
+}
+
+.about-lead {
+    font-size: 1.15rem;
+    color: var(--color-text);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    color: var(--color-text-light);
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+/* ===== Team Section ===== */
+.team-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.team-section h2 {
+    font-size: 1.8rem;
+    color: var(--color-text);
+    margin-bottom: 12px;
+}
+
+.team-intro {
+    color: var(--color-text-light);
+    margin-bottom: 50px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.team-member {
+    background-color: var(--color-surface);
+    border-radius: var(--border-radius);
+    padding: 40px 30px;
+    box-shadow: 0 2px 10px rgba(63, 52, 50, 0.06);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.team-member:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 26px rgba(63, 52, 50, 0.12);
+}
+
+.team-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    font-size: 1.8rem;
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 20px;
+}
+
+.team-member h3 {
+    color: var(--color-text);
+    font-size: 1.3rem;
+    margin-bottom: 6px;
+}
+
+.team-role {
+    color: var(--color-primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+.team-bio {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+/* ===== Contact Section ===== */
+.contact-section {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 40px 100px;
+}
+
+.contact-section h2 {
+    font-size: 1.8rem;
+    color: var(--color-text);
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.contact-intro {
+    text-align: center;
+    color: var(--color-text-light);
+    margin-bottom: 40px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--color-text);
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 12px 16px;
+    border: 2px solid var(--color-primary-light);
+    border-radius: var(--border-radius);
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px rgba(201, 130, 141, 0.15);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-button {
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    border: none;
+    padding: 14px;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transition), transform var(--transition);
+}
+
+.contact-button:hover,
+.contact-button:focus {
+    background-color: var(--color-text);
+    transform: translateY(-2px);
+}
+
+/* ===== Responsive — About Page ===== */
+@media (max-width: 700px) {
+    .about-section {
+        padding: 60px 24px;
+    }
+
+    .about-section h1 {
+        font-size: 1.9rem;
+    }
+
+    .team-section {
+        padding: 60px 24px;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .contact-section {
+        padding: 0 24px 80px;
+    }
+}
+
+/* =========================
+   Responsive — Recipe Detail
+   ========================= */
+
+@media (max-width: 900px) {
+    .recipe-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .recipe-hero-text h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .recipe-hero {
+        padding: 40px 24px;
+    }
+
+    .story-pack {
+        padding: 60px 24px;
+    }
+
+    .story-step {
+        padding-left: 60px;
+    }
+
+    .step-number {
+        font-size: 1.8rem;
+    }
+
+    .kitchen-assistant {
+        margin: 0 24px 60px;
+        padding: 36px 24px;
+    }
+
+    .recommendation {
+        padding: 0 24px 80px;
+    }
+
+    .recommendation-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
+
 /* Respect reduced-motion preferences */
 @media (prefers-reduced-motion: reduce) {
     *,
